@@ -111,6 +111,15 @@ public abstract class ViewGroupMixIn {
                 }
             }
         }
+
+        //TODO: In addition or replace the first loop?
+        //get deeper to not top level views
+        for (View v : getAllViews()) {
+            if (v.getViewName().equals(name)) {
+                return v;
+            }
+        }
+
         return null;
     }
 
@@ -127,6 +136,11 @@ public abstract class ViewGroupMixIn {
         }
         Collections.sort(copy, View.SORTER);
         return copy;
+    }
+
+    //Already implemented in ViewGroup interface - can be private
+    private Collection<View> getAllViews() {
+        return owner.getAllViews();
     }
 
     /**
