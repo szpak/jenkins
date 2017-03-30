@@ -858,7 +858,7 @@ public class Functions {
         if(footerURL == null) {
             footerURL = SystemProperties.getString("hudson.footerURL");
             if(StringUtils.isBlank(footerURL)) {
-                footerURL = "http://jenkins-ci.org/";
+                footerURL = "https://jenkins.io/";
             }
         }
         return footerURL;
@@ -1394,7 +1394,7 @@ public class Functions {
     }
 
     /**
-     * Resoruce path prefix.
+     * Resource path prefix.
      */
     public static String getResourcePath() {
         return Jenkins.RESOURCE_PATH;
@@ -1510,7 +1510,7 @@ public class Functions {
      * Like {@link Throwable#printStackTrace(PrintWriter)} but using {@link #printThrowable} format.
      * @param t an exception to print
      * @param pw the log
-     * @since FIXME
+     * @since 2.43
      */
     public static void printStackTrace(@CheckForNull Throwable t, @Nonnull PrintWriter pw) {
         pw.println(printThrowable(t).trim());
@@ -1520,7 +1520,7 @@ public class Functions {
      * Like {@link Throwable#printStackTrace(PrintStream)} but using {@link #printThrowable} format.
      * @param t an exception to print
      * @param ps the log
-     * @since FIXME
+     * @since 2.43
      */
     public static void printStackTrace(@CheckForNull Throwable t, @Nonnull PrintStream ps) {
         ps.println(printThrowable(t).trim());

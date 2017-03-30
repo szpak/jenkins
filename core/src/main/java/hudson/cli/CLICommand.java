@@ -319,7 +319,7 @@ public abstract class CLICommand implements ExtensionPoint, Cloneable {
     
     public Channel checkChannel() throws AbortException {
         if (channel==null)
-            throw new AbortException("This command can only run with Jenkins CLI. See https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+CLI");
+            throw new AbortException("This command can only run with Jenkins CLI. See https://jenkins.io/redirect/cli-command-requires-channel");
         return channel;
     }
 
@@ -401,11 +401,11 @@ public abstract class CLICommand implements ExtensionPoint, Cloneable {
      * @throws IllegalArgumentException
      *      If the execution can't continue due to wrong input parameter (job doesn't exist etc.)
      * @throws IllegalStateException
-     *      If the execution can't continue due to an incorect state of Jenkins, job, build etc.
+     *      If the execution can't continue due to an incorrect state of Jenkins, job, build etc.
      * @throws AbortException
      *      If the execution can't continue due to an other (rare, but foreseeable) issue
      * @throws AccessDeniedException
-     *      If the caller doesn't have sufficent rights for requested action
+     *      If the caller doesn't have sufficient rights for requested action
      * @throws BadCredentialsException
      *      If bad credentials were provided to CLI
      */
